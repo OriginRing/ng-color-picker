@@ -1,0 +1,17 @@
+**/*.md
+**/*.svg
+**/test.ts
+coverage/
+publish/
+schematics/
+package.json
+**/template/*
+node_modules/
+out-tsc/
+dist/
+boot/
+out-tsc/
+.angular/
+node/
+.eslintcache
+.eslintignore

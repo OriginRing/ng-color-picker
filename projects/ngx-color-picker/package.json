@@ -1,0 +1,13 @@
+{
+  "name": "ngx-color-picker",
+  "version": "0.0.1-beta",
+  "peerDependencies": {
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@ctrl/tinycolor": "^3.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
