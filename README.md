@@ -1,27 +1,56 @@
 # NgColorPicker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+## Introduction
 
-## Development server
+Angular version >= 15
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+```shell
+npm install ···
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+```shell
+import { NgxColorPickerModule } from 'ngx-color-picker';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<ngx-color-picker></ngx-color-picker>
 
-## Running unit tests
+<ngx-color-block color="#ff6600"></ngx-color-block>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Basic
 
-## Running end-to-end tests
+  <img src="https://github.com/OriginRing/ng-color-picker/blob/master/src/assets/images/color-picker.png" alt="basic" width="300" style="box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),0 6px 16px 0 rgba(0, 0, 0, 0.08),0 9px 28px 8px rgba(0, 0, 0, 0.05);">
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Custom Header / Footer
 
-## Further help
+  <img src="https://github.com/OriginRing/ng-color-picker/blob/master/src/assets/images/custom-color.png" alt="basic" width="300" style="box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),0 6px 16px 0 rgba(0, 0, 0, 0.08),0 9px 28px 8px rgba(0, 0, 0, 0.05);">
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Color Block
+
+  <img src="https://github.com/OriginRing/ng-color-picker/blob/master/src/assets/images/color-block.png" alt="basic">
+
+## API
+
+### ngx-color-picker
+
+| Parameter                 | Description                          | Type                          | Default |
+|--------------------|--------------------------------------|-----------------------------|---------|
+| `[value]`        | Value of color                       | `string`｜`ColorValue`            | -       |
+| `[defaultValue]` | Default value of color               | `string`｜`ColorValue`            | -       |
+| `[disabled]`   | Disable ColorPicker                  | `boolean`                   | `false` |
+| `[disabledAlpha]`      | Disable Transparency                 | `boolean`             | `false` |
+| `[panelRenderHeader]`      | Set the header of the color picker| `TemplateRef<void>`   | -       |
+| `[panelRenderFooter]`      | Set the tail of the color picker | `TemplateRef<void>`   | -       |
+| `(nzOnChange)`     | Callback when value is changed       | `EventEmitter<{ color: Color; type?: HsbaColorType }>`      | -       |
+| `(nzOnChangeComplete)`      | 	Called when clear                   | `EventEmitter<HsbaColorType>`     | -       |
+
+
+### ngx-color-block
+
+| Parameter    | Description   | Type  | Default       |
+|--------------|----------|------------|-----------|
+| `[color]` | Module colors | `string` | `#1677ff` |
+| `[nzOnClick]` | Callbacks for clicking on color blocks | `EventEmitter<boolean>`   | - |
