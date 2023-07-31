@@ -42,7 +42,7 @@ function getPosition(e: EventType): { pageX: number; pageY: number } {
       <color-palette>
         <div
           #transform
-          style="position: absolute; z-index: 1"
+          style="position: absolute; z-index: 1;"
           [style.left]="offsetValue.x + 'px'"
           [style.top]="offsetValue.y + 'px'"
         >
@@ -79,7 +79,10 @@ export class SliderComponent implements OnInit, AfterViewInit, OnChanges {
   mouseMoveRef: (e: MouseEvent | TouchEvent) => void = () => null;
   mouseUpRef: (e: MouseEvent | TouchEvent) => void = () => null;
 
-  constructor(private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit(): void {
     this.document.removeEventListener('mousemove', this.mouseMoveRef);

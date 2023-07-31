@@ -8,6 +8,7 @@
     "build": "ng build ngx-color-picker --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:lib": "ng run ngx-color-picker:test",
     "lint": "ng lint",
     "lint:fix": "eslint --fix --cache . --ext .ts,.html",
     "pre-commit": "lint-staged --no-stash"

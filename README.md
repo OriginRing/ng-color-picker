@@ -4,6 +4,23 @@
 
 Angular version >= 15
 
+## Development
+
+```shell
+git clone https://github.com/OriginRing/ng-color-picker.git
+npm install
+
+## build
+npm run build
+
+## start
+npm run start
+
+## test
+npm run test:lib
+```
+
+
 ## Installation
 
 ```shell

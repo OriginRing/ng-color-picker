@@ -1,6 +1,9 @@
 <h1>Basic</h1>
 <ngx-color-picker></ngx-color-picker>
 
+<h1>DefaultValue</h1>
+<ngx-color-picker defaultValue="#ff6600"></ngx-color-picker>
+
 <h1>Disabled</h1>
 <ngx-color-picker [disabled]="true"></ngx-color-picker>
 
@@ -23,9 +26,7 @@
 </div>
 
 <ng-template #title>
-  <div style="margin-bottom: 8px;">
-    Color Picker
-  </div>
+  <div style="margin-bottom: 8px">Color Picker</div>
 </ng-template>
 <ng-template #input>
   <input [(ngModel)]="color" (input)="inputChange($event)" />

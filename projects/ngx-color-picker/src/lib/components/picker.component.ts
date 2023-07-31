@@ -41,7 +41,7 @@ function getPosition(e: EventType): { pageX: number; pageY: number } {
       <color-palette>
         <div
           #transform
-          style="position: absolute; z-index: 1"
+          style="position: absolute; z-index: 1;"
           [style.left]="offsetValue.x + 'px'"
           [style.top]="offsetValue.y + 'px'"
         >
@@ -81,7 +81,10 @@ export class PickerComponent implements OnInit, AfterViewInit, OnChanges {
     return `hsl(${this.color?.toHsb().h},100%, 50%)`;
   }
 
-  constructor(private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit(): void {
     this.document.removeEventListener('mousemove', this.mouseMoveRef);
@@ -147,12 +150,10 @@ export class PickerComponent implements OnInit, AfterViewInit, OnChanges {
       x: offsetX,
       y: direction === 'x' ? this.offsetValue.y : offsetY
     };
-
     // Exclusion of boundary cases
     if ((targetWidth === 0 && targetHeight === 0) || targetWidth !== targetHeight) {
       return;
     }
-
     this.offsetValue = calcOffset;
     this.nzOnChange.emit(
       calculateColor(calcOffset, this.containerRef.nativeElement, this.transformRef.nativeElement, this.color)

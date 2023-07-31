@@ -90,14 +90,14 @@ export class NgxColorPickerComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const { value } = changes;
-    if (value) {
+    const { value, defaultValue } = changes;
+    if (value || defaultValue) {
       this.setColorValue(this.value);
     }
   }
 
   hasValue(value: ColorValue): boolean {
-    return value !== undefined;
+    return !!value;
   }
 
   setColorValue(color: ColorValue): void {
@@ -112,7 +112,7 @@ export class NgxColorPickerComponent implements OnInit, OnChanges {
     this.colorValue = generateColor(mergeState as ColorGenInput);
     this.setAlphaColor(this.colorValue);
     this.toRgbString = this.colorValue?.toRgbString() || '';
-    this.cdr.markForCheck();
+    this.cdr.detectChanges();
   }
 
   setAlphaColor(colorValue: Color): void {
