@@ -9,7 +9,7 @@ Angular version >= 15
 ## Installation
 
 ```shell
-npm install ···
+npm install ng-antd-color-picker
 ```
 
 ## Usage

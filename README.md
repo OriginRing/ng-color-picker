@@ -31,7 +31,7 @@ npm run test
 ## Installation
 
 ```shell
-npm install ···
+npm install ng-antd-color-picker
 ```
 
 ## Usage
