@@ -25,14 +25,14 @@ describe('NgxColorBlockComponent', () => {
   it('color-block color', () => {
     component.color = '#ff6600';
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgb(255, 102, 0)'
     );
   });
 
   it('color-block click', () => {
     fixture.detectChanges();
-    resultEl.nativeElement.querySelector('.color-picker-block').click();
+    resultEl.nativeElement.querySelector('.ant-color-picker-block').click();
     expect(component.isClick).toBeTrue();
   });
 });

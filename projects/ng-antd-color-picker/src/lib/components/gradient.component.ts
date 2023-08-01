@@ -8,7 +8,7 @@ import { generateColor } from '../util/util';
   selector: 'color-gradient',
   template: `
     <div
-      class="color-picker-gradient"
+      class="ant-color-picker-gradient"
       style="position: absolute; inset: 0"
       [style.background]="'linear-gradient(' + direction + ', ' + gradientColors + ')'"
     >

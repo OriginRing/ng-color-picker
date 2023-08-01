@@ -6,9 +6,9 @@ type HandlerSize = 'default' | 'small';
   selector: 'color-handler',
   template: `
     <div
-      class="color-picker-handler"
+      class="ant-color-picker-handler"
       [style.background-color]="color"
-      [class.color-picker-handler-sm]="size === 'small'"
+      [class.ant-color-picker-handler-sm]="size === 'small'"
     ></div>
   `
 })

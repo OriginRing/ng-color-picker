@@ -34,7 +34,7 @@ function getPosition(e: EventType): { pageX: number; pageY: number } {
   template: `
     <div
       #slider
-      class="color-picker-select"
+      class="ant-color-picker-select"
       (mousedown)="dragStartHandle($event)"
       (touchstart)="dragStartHandle($event)"
     >
@@ -48,7 +48,7 @@ function getPosition(e: EventType): { pageX: number; pageY: number } {
           <color-handler [color]="toRgbString()" />
         </div>
         <div
-          class="color-picker-saturation"
+          class="ant-color-picker-saturation"
           style="
         background-image: linear-gradient(0deg, #000, transparent),
           linear-gradient(90deg, #fff, hsla(0, 0%, 100%, 0));

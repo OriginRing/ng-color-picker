@@ -16,7 +16,7 @@ import { defaultColor, generateColor } from './util/util';
 @Component({
   selector: 'ng-antd-color-picker',
   template: `
-    <div class="color-picker-panel" [class.color-picker-panel-disabled]="disabled">
+    <div class="ant-color-picker-panel" [class.ant-color-picker-panel-disabled]="disabled">
       <ng-container *ngIf="panelRenderHeader">
         <ng-template [ngTemplateOutlet]="panelRenderHeader"></ng-template>
       </ng-container>
@@ -26,8 +26,8 @@ import { defaultColor, generateColor } from './util/util';
         [disabled]="disabled"
         (nzOnChangeComplete)="nzOnChangeComplete.emit($event)"
       ></color-picker>
-      <div class="color-picker-slider-container">
-        <div class="color-picker-slider-group" [class.color-picker-slider-group-disabled-alpha]="disabledAlpha">
+      <div class="ant-color-picker-slider-container">
+        <div class="ant-color-picker-slider-group" [class.ant-color-picker-slider-group-disabled-alpha]="disabledAlpha">
           <color-slider
             [color]="colorValue"
             [value]="'hsl(' + colorValue?.toHsb()?.h + ',100%, 50%)'"

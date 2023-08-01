@@ -1,4 +1,4 @@
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NgAntdColorPickerComponent } from './ng-antd-color-picker.component';
 import { NgAntdColorPickerModule } from './ng-antd-color-picker.module';
@@ -27,26 +27,29 @@ describe('NgxColorPickerComponent', () => {
     resultEl = fixture.debugElement.query(By.directive(NgAntdColorPickerComponent));
 
     // karma 无法读取class样式， 添加默认样式
-    fixture.debugElement.nativeElement.querySelector('.color-picker-select').style.width = '258px';
-    fixture.debugElement.nativeElement.querySelector('.color-picker-select').style.height = '160px';
+    fixture.debugElement.nativeElement.querySelector('.ant-color-picker-select').style.width = '258px';
+    fixture.debugElement.nativeElement.querySelector('.ant-color-picker-select').style.height = '160px';
 
-    fixture.debugElement.nativeElement.querySelector('.color-picker-slider-hue').style.width = '222px';
-    fixture.debugElement.nativeElement.querySelector('.color-picker-slider-hue').style.height = '8px';
+    fixture.debugElement.nativeElement.querySelector('.ant-color-picker-slider-hue').style.width = '222px';
+    fixture.debugElement.nativeElement.querySelector('.ant-color-picker-slider-hue').style.height = '8px';
 
-    fixture.debugElement.nativeElement.querySelector('.color-picker-slider-alpha').style.width = '222px';
-    fixture.debugElement.nativeElement.querySelector('.color-picker-slider-alpha').style.height = '8px';
+    fixture.debugElement.nativeElement.querySelector('.ant-color-picker-slider-alpha').style.width = '222px';
+    fixture.debugElement.nativeElement.querySelector('.ant-color-picker-slider-alpha').style.height = '8px';
 
-    fixture.debugElement.nativeElement.querySelectorAll('.color-picker-palette')[0].firstChild.style.width = '16px';
-    fixture.debugElement.nativeElement.querySelectorAll('.color-picker-palette')[0].firstChild.style.height = '16px';
-    fixture.debugElement.nativeElement.querySelectorAll('.color-picker-palette')[1].firstChild.style.width = '16px';
-    fixture.debugElement.nativeElement.querySelectorAll('.color-picker-palette')[1].firstChild.style.height = '16px';
-    fixture.debugElement.nativeElement.querySelectorAll('.color-picker-palette')[2].firstChild.style.width = '16px';
-    fixture.debugElement.nativeElement.querySelectorAll('.color-picker-palette')[2].firstChild.style.height = '16px';
+    fixture.debugElement.nativeElement.querySelectorAll('.ant-color-picker-palette')[0].firstChild.style.width = '16px';
+    fixture.debugElement.nativeElement.querySelectorAll('.ant-color-picker-palette')[0].firstChild.style.height =
+      '16px';
+    fixture.debugElement.nativeElement.querySelectorAll('.ant-color-picker-palette')[1].firstChild.style.width = '16px';
+    fixture.debugElement.nativeElement.querySelectorAll('.ant-color-picker-palette')[1].firstChild.style.height =
+      '16px';
+    fixture.debugElement.nativeElement.querySelectorAll('.ant-color-picker-palette')[2].firstChild.style.width = '16px';
+    fixture.debugElement.nativeElement.querySelectorAll('.ant-color-picker-palette')[2].firstChild.style.height =
+      '16px';
   });
 
   it('color-picker basic', () => {
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgb(22, 119, 255)'
     );
   });
@@ -54,7 +57,7 @@ describe('NgxColorPickerComponent', () => {
   it('color-picker defaultValue', () => {
     component.defaultValue = '#ff6600';
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgb(255, 102, 0)'
     );
   });
@@ -62,33 +65,33 @@ describe('NgxColorPickerComponent', () => {
   it('color-picker disabled', () => {
     component.disabled = true;
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.color-picker-panel').classList).toContain(
-      'color-picker-panel-disabled'
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-panel').classList).toContain(
+      'ant-color-picker-panel-disabled'
     );
   });
 
   it('color-picker disabledAlpha', () => {
     component.disabledAlpha = true;
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.color-picker-slider-group').classList).toContain(
-      'color-picker-slider-group-disabled-alpha'
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-slider-group').classList).toContain(
+      'ant-color-picker-slider-group-disabled-alpha'
     );
   });
 
   it('color-picker input color', () => {
     component.value = '#ff6600';
     fixture.detectChanges();
-    const dom = fixture.debugElement.nativeElement.querySelector('.color-picker-palette');
+    const dom = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-palette');
     expect(dom.firstChild.style.top).toBe('-8px');
     expect(dom.firstChild.style.left).toBe('250px');
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgb(255, 102, 0)'
     );
   });
 
   it('color-picker slide select', () => {
     fixture.detectChanges();
-    const element = fixture.debugElement.nativeElement.querySelector('.color-picker-select');
+    const element = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-select');
     const { x, y } = {
       x: element.offsetLeft + 258,
       y: element.offsetTop - 8
@@ -97,10 +100,10 @@ describe('NgxColorPickerComponent', () => {
     const event1 = new MouseEvent('mouseup');
     element.dispatchEvent(event);
     element.dispatchEvent(event1);
-    const dom = fixture.debugElement.nativeElement.querySelector('.color-picker-palette');
+    const dom = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-palette');
     expect(dom.firstChild.style.top).toBe('-8px');
     expect(dom.firstChild.style.left).toBe('250px');
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgb(0, 106, 255)'
     );
     expect(component.changeColor?.toRgbString()).toBe('rgb(0, 106, 255)');
@@ -109,7 +112,7 @@ describe('NgxColorPickerComponent', () => {
 
   it('color-picker slide hue', () => {
     fixture.detectChanges();
-    const element = fixture.debugElement.nativeElement.querySelector('.color-picker-slider-hue');
+    const element = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-slider-hue');
     const { x, y } = {
       x: element.offsetLeft + 230,
       y: element.offsetTop + 4
@@ -118,7 +121,7 @@ describe('NgxColorPickerComponent', () => {
     const closeEvent = new MouseEvent('mouseup');
     element.dispatchEvent(event);
     element.dispatchEvent(closeEvent);
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgb(255, 22, 22)'
     );
     expect(component.changeColor?.toRgbString()).toBe('rgb(255, 22, 22)');
@@ -127,7 +130,7 @@ describe('NgxColorPickerComponent', () => {
 
   it('color-picker slide alpha', () => {
     fixture.detectChanges();
-    const element = fixture.debugElement.nativeElement.querySelector('.color-picker-slider-alpha');
+    const element = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-slider-alpha');
     const { x, y } = {
       x: element.offsetLeft - 6,
       y: element.offsetTop + 4
@@ -136,7 +139,7 @@ describe('NgxColorPickerComponent', () => {
     const closeEvent = new MouseEvent('mouseup');
     element.dispatchEvent(event);
     element.dispatchEvent(closeEvent);
-    expect(resultEl.nativeElement.querySelector('.color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
       'rgba(22, 119, 255, 0)'
     );
     expect(component.changeColor?.toRgbString()).toBe('rgba(22, 119, 255, 0)');
@@ -145,8 +148,8 @@ describe('NgxColorPickerComponent', () => {
 
   it('color-picker ngTemplateOutlet', () => {
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.color-picker-header').innerText).toBe('Color Picker Header');
-    expect(resultEl.nativeElement.querySelector('.color-picker-footer').innerText).toBe('Color Picker Footer');
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-header').innerText).toBe('Color Picker Header');
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-footer').innerText).toBe('Color Picker Footer');
   });
 });
 
@@ -163,10 +166,10 @@ describe('NgxColorPickerComponent', () => {
       (nzOnChangeComplete)="onChangeComplete($event)"
     ></ng-antd-color-picker>
     <ng-template #title>
-      <div class="color-picker-header">Color Picker Header</div>
+      <div class="ant-color-picker-header">Color Picker Header</div>
     </ng-template>
     <ng-template #footer>
-      <div class="color-picker-footer">Color Picker Footer</div>
+      <div class="ant-color-picker-footer">Color Picker Footer</div>
     </ng-template>
   `
 })

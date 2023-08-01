@@ -6,28 +6,6 @@ The angular version of the color-picker component based on antd styles.
 
 Angular version >= 15
 
-## Development
-
-```
-git clone https://github.com/OriginRing/ng-color-picker.git
-npm install
-
-## build
-npm run build
-cd dist/ng-antd-color-picker
-npm pack
-
-## install ng-antd-color-picker-${version}.tgz
-npm install dist/ng-antd-color-picker/ng-antd-color-picker-${version}.tgz
-
-## start
-npm run start
-
-## test
-npm run test
-```
-
-
 ## Installation
 
 ```shell

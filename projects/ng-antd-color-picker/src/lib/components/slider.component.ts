@@ -36,8 +36,8 @@ function getPosition(e: EventType): { pageX: number; pageY: number } {
       #slider
       (mousedown)="dragStartHandle($event)"
       (touchstart)="dragStartHandle($event)"
-      class="color-picker-slider"
-      [ngClass]="'color-picker-slider-' + type"
+      class="ant-color-picker-slider"
+      [ngClass]="'ant-color-picker-slider-' + type"
     >
       <color-palette>
         <div
