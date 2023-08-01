@@ -29,7 +29,7 @@
           "error",
           {
             "type": ["attribute", "element"],
-            "prefix": "ngx-color-picker",
+            "prefix": "ng-antd-color-picker",
             "style": "kebab-case"
           }
         ],
@@ -37,7 +37,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngx-color-picker",
+            "prefix": "ng-antd-color-picker",
             "style": "camelCase"
           }
         ],
@@ -118,7 +118,7 @@
                 "position": "before"
               },
               {
-                "pattern": "@ngx-color-picker/**",
+                "pattern": "@ng-antd-color-picker/**",
                 "group": "internal",
                 "position": "before"
               }

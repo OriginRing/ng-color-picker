@@ -1,8 +1,8 @@
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxColorBlockComponent } from './ngx-color-block.component';
-import { NgxColorPickerModule } from './ngx-color-picker.module';
+import { NgAntdColorBlockComponent } from './ng-antd-color-block.component';
+import { NgAntdColorPickerModule } from './ng-antd-color-picker.module';
 import { By } from '@angular/platform-browser';
 
 describe('NgxColorBlockComponent', () => {
@@ -13,13 +13,13 @@ describe('NgxColorBlockComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [NzxTestColorBlockComponent],
-      imports: [NgxColorPickerModule]
+      imports: [NgAntdColorPickerModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NzxTestColorBlockComponent);
     fixture.detectChanges();
     component = fixture.componentInstance;
-    resultEl = fixture.debugElement.query(By.directive(NgxColorBlockComponent));
+    resultEl = fixture.debugElement.query(By.directive(NgAntdColorBlockComponent));
   });
 
   it('color-block color', () => {
@@ -39,7 +39,7 @@ describe('NgxColorBlockComponent', () => {
 
 @Component({
   template: `
-    <ngx-color-block [color]="color" (nzOnClick)="clickHandle($event)"></ngx-color-block>
+    <ng-antd-color-block [color]="color" (nzOnClick)="clickHandle($event)"></ng-antd-color-block>
   `
 })
 export class NzxTestColorBlockComponent {

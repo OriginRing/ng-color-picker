@@ -1,7 +1,7 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 
-import { NgxColorPickerComponent } from './ngx-color-picker.component';
-import { NgxColorPickerModule } from './ngx-color-picker.module';
+import { NgAntdColorPickerComponent } from './ng-antd-color-picker.component';
+import { NgAntdColorPickerModule } from './ng-antd-color-picker.module';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { PickerComponent } from './components/picker.component';
@@ -16,7 +16,7 @@ describe('NgxColorPickerComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [NzxTestColorPickerComponent, PickerComponent],
-      imports: [NgxColorPickerModule]
+      imports: [NgAntdColorPickerModule]
     }).compileComponents();
   }));
 
@@ -24,7 +24,7 @@ describe('NgxColorPickerComponent', () => {
     fixture = TestBed.createComponent(NzxTestColorPickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    resultEl = fixture.debugElement.query(By.directive(NgxColorPickerComponent));
+    resultEl = fixture.debugElement.query(By.directive(NgAntdColorPickerComponent));
 
     // karma 无法读取class样式， 添加默认样式
     fixture.debugElement.nativeElement.querySelector('.color-picker-select').style.width = '258px';
@@ -152,7 +152,7 @@ describe('NgxColorPickerComponent', () => {
 
 @Component({
   template: `
-    <ngx-color-picker
+    <ng-antd-color-picker
       [value]="value"
       [defaultValue]="defaultValue"
       [disabled]="disabled"
@@ -161,7 +161,7 @@ describe('NgxColorPickerComponent', () => {
       [panelRenderFooter]="footer"
       (nzOnChange)="onChange($event)"
       (nzOnChangeComplete)="onChangeComplete($event)"
-    ></ngx-color-picker>
+    ></ng-antd-color-picker>
     <ng-template #title>
       <div class="color-picker-header">Color Picker Header</div>
     </ng-template>

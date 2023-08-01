@@ -1,0 +1,31 @@
+{
+  "name": "ng-antd-color-picker",
+  "version": "0.0.1-beta",
+  "author": "originRing",
+  "keywords": [
+    "color-picker",
+    "ng-color-picker",
+    "ngx-color-picker",
+    "ng-antd-color-picker",
+    "angular color-picker"
+  ],
+  "license": "MIT",
+  "description": "The angular version of the color-picker component based on antd styles.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OriginRing/ng-color-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OriginRing/ng-color-picker/issues"
+  },
+  "homepage": "https://github.com/OriginRing/ng-color-picker",
+  "peerDependencies": {
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@ctrl/tinycolor": "^3.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4000",
-    "build:less": "lessc projects/ngx-color-picker/styles/styles.less projects/ngx-color-picker/styles/styles.css",
-    "build": "ng build ngx-color-picker --configuration production",
+    "build": "ng build ng-antd-color-picker --configuration production",
+    "build:less": "lessc projects/ng-antd-color-picker/styles/styles.less projects/ng-antd-color-picker/styles/styles.css",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "test:lib": "ng run ngx-color-picker:test",
+    "test": "ng run ng-antd-color-picker:test",
     "lint": "ng lint",
     "lint:fix": "eslint --fix --cache . --ext .ts,.html",
     "pre-commit": "lint-staged --no-stash"

@@ -14,7 +14,7 @@ import { Color } from './interfaces/color';
 import { defaultColor, generateColor } from './util/util';
 
 @Component({
-  selector: 'ngx-color-picker',
+  selector: 'ng-antd-color-picker',
   template: `
     <div class="color-picker-panel" [class.color-picker-panel-disabled]="disabled">
       <ng-container *ngIf="panelRenderHeader">
@@ -48,7 +48,7 @@ import { defaultColor, generateColor } from './util/util';
             ></color-slider>
           </ng-container>
         </div>
-        <ngx-color-block [color]="toRgbString"></ngx-color-block>
+        <ng-antd-color-block [color]="toRgbString"></ng-antd-color-block>
       </div>
       <ng-container *ngIf="panelRenderFooter">
         <ng-template [ngTemplateOutlet]="panelRenderFooter"></ng-template>
@@ -56,7 +56,7 @@ import { defaultColor, generateColor } from './util/util';
     </div>
   `
 })
-export class NgxColorPickerComponent implements OnInit, OnChanges {
+export class NgAntdColorPickerComponent implements OnInit, OnChanges {
   @Input() value: ColorValue;
   @Input() defaultValue: ColorValue;
   @Output() nzOnChange = new EventEmitter<{ color: Color; type?: HsbaColorType }>();

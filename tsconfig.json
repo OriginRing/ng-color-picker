@@ -12,8 +12,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "ngx-color-picker": [
-        "dist/ngx-color-picker"
+      "ng-antd-color-picker": [
+        "dist/ng-antd-color-picker"
       ]
     },
     "declaration": false,

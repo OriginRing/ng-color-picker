@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Color } from '../../projects/ngx-color-picker/src/lib/interfaces/color';
-import { HsbaColorType } from '../../projects/ngx-color-picker/src/lib/interfaces/type';
+import { Color } from '../../projects/ng-antd-color-picker/src/lib/interfaces/color';
+import { HsbaColorType } from '../../projects/ng-antd-color-picker/src/lib/interfaces/type';
 
 export const toHexFormat = (value?: string): string => value?.replace(/[^0-9a-fA-F#]/g, '').slice(0, 9) || '';
 

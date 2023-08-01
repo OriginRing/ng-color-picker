@@ -1,27 +1,27 @@
 <h1>Basic</h1>
-<ngx-color-picker></ngx-color-picker>
+<ng-antd-color-picker></ng-antd-color-picker>
 
 <h1>DefaultValue</h1>
-<ngx-color-picker defaultValue="#ff6600"></ngx-color-picker>
+<ng-antd-color-picker defaultValue="#ff6600"></ng-antd-color-picker>
 
 <h1>Disabled</h1>
-<ngx-color-picker [disabled]="true"></ngx-color-picker>
+<ng-antd-color-picker [disabled]="true"></ng-antd-color-picker>
 
 <h1>Disabled Alpha</h1>
-<ngx-color-picker [disabledAlpha]="true"></ngx-color-picker>
+<ng-antd-color-picker [disabledAlpha]="true"></ng-antd-color-picker>
 
 <h1>Custom Render</h1>
-<ngx-color-picker
+<ng-antd-color-picker
   [panelRenderHeader]="title"
   [panelRenderFooter]="input"
   [value]="value"
   (nzOnChange)="onChange($event)"
-></ngx-color-picker>
+></ng-antd-color-picker>
 
 <h1>Color Block</h1>
 <div style="display: flex; flex-wrap: wrap">
   <ng-container *ngFor="let color of colorPresets">
-    <ngx-color-block [color]="color" style="margin-right: 8px"></ngx-color-block>
+    <ng-antd-color-block [color]="color" style="margin-right: 8px"></ng-antd-color-block>
   </ng-container>
 </div>
 
