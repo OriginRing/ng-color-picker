@@ -18,7 +18,12 @@
         ],
         "createDefaultProgram": true
       },
-      "plugins": ["@typescript-eslint", "jsdoc", "import", "unused-imports"],
+      "plugins": [
+        "@typescript-eslint",
+        "jsdoc",
+        "import",
+        "unused-imports"
+      ],
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
@@ -28,7 +33,10 @@
         "@angular-eslint/component-selector": [
           "error",
           {
-            "type": ["attribute", "element"],
+            "type": [
+              "attribute",
+              "element"
+            ],
             "prefix": "ng-antd-color-picker",
             "style": "kebab-case"
           }
@@ -110,7 +118,16 @@
               "caseInsensitive": false
             },
             "newlines-between": "always",
-            "groups": ["external", "builtin", "internal", ["parent", "sibling", "index"]],
+            "groups": [
+              "external",
+              "builtin",
+              "internal",
+              [
+                "parent",
+                "sibling",
+                "index"
+              ]
+            ],
             "pathGroups": [
               {
                 "pattern": "{@angular/**,rxjs,rxjs/operators}",

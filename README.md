@@ -4,7 +4,7 @@
 
 The angular version of the color-picker component based on antd styles.
 
-Angular version >= 15
+Angular version >= 16
 
 ## Development
 
