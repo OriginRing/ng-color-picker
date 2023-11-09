@@ -2,7 +2,6 @@ import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgAntdColorBlockComponent } from './ng-antd-color-block.component';
-import { NgAntdColorPickerModule } from './ng-antd-color-picker.module';
 import { By } from '@angular/platform-browser';
 
 describe('NgxColorBlockComponent', () => {
@@ -13,7 +12,7 @@ describe('NgxColorBlockComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [NzxTestColorBlockComponent],
-      imports: [NgAntdColorPickerModule]
+      imports: [NgAntdColorBlockComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NzxTestColorBlockComponent);
@@ -25,14 +24,14 @@ describe('NgxColorBlockComponent', () => {
   it('color-block color', () => {
     component.color = '#ff6600';
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgb(255, 102, 0)'
     );
   });
 
   it('color-block click', () => {
     fixture.detectChanges();
-    resultEl.nativeElement.querySelector('.ant-color-picker-block').click();
+    resultEl.nativeElement.querySelector('.ant-color-picker-color-block').click();
     expect(component.isClick).toBeTrue();
   });
 });

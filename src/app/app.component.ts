@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { Color, HsbaColorType } from 'ng-antd-color-picker';
+import { FormsModule } from '@angular/forms';
+import { NgStyle } from '@angular/common';
+import { Color, HsbaColorType, NgAntdColorBlockComponent, NgAntdColorPickerComponent } from 'ng-antd-color-picker';
 
 export const toHexFormat = (value?: string): string => value?.replace(/[^0-9a-fA-F#]/g, '').slice(0, 9) || '';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  imports: [FormsModule, NgAntdColorPickerComponent, NgAntdColorBlockComponent, NgStyle]
 })
 export class AppComponent {
   colorPresets: string[] = [

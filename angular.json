@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-color-picker:build:production"
+              "buildTarget": "ng-color-picker:build:production"
             },
             "development": {
-              "browserTarget": "ng-color-picker:build:development"
+              "buildTarget": "ng-color-picker:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-color-picker:build"
+            "buildTarget": "ng-color-picker:build"
           }
         },
         "test": {

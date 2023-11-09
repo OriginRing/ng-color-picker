@@ -20,9 +20,9 @@
 
 <h1>Color Block</h1>
 <div style="display: flex; flex-wrap: wrap">
-  <ng-container *ngFor="let color of colorPresets">
-    <ng-antd-color-block [color]="color" style="margin-right: 8px"></ng-antd-color-block>
-  </ng-container>
+  @for(color of colorPresets; track color) {
+    <ng-antd-color-block [color]="color" style="margin-right: 8px; margin-bottom: 8px;"></ng-antd-color-block>
+  }
 </div>
 
 <ng-template #title>

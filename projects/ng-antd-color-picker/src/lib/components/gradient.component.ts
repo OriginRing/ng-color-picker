@@ -6,6 +6,7 @@ import { generateColor } from '../util/util';
 
 @Component({
   selector: 'color-gradient',
+  standalone: true,
   template: `
     <div
       class="ant-color-picker-gradient"

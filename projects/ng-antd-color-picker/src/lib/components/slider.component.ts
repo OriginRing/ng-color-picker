@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgClass } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -17,6 +17,9 @@ import {
 import { Color } from '../interfaces/color';
 import { HsbaColorType, TransformOffset } from '../interfaces/type';
 import { calculateColor, calculateOffset } from '../util/util';
+import { PaletteComponent } from './palette.component';
+import { GradientComponent } from './gradient.component';
+import { HandlerComponent } from './handler.component';
 
 type EventType = MouseEvent | TouchEvent;
 
@@ -31,6 +34,8 @@ function getPosition(e: EventType): { pageX: number; pageY: number } {
 
 @Component({
   selector: 'color-slider',
+  standalone: true,
+  imports: [PaletteComponent, GradientComponent, HandlerComponent, NgClass],
   template: `
     <div
       #slider

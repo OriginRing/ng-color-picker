@@ -4,6 +4,7 @@ type HandlerSize = 'default' | 'small';
 
 @Component({
   selector: 'color-handler',
+  standalone: true,
   template: `
     <div
       class="ant-color-picker-handler"

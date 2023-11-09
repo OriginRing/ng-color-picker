@@ -12,9 +12,15 @@ import {
 import { ColorGenInput, ColorValue, HsbaColorType } from './interfaces/type';
 import { Color } from './interfaces/color';
 import { defaultColor, generateColor } from './util/util';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { PickerComponent } from './components/picker.component';
+import { SliderComponent } from './components/slider.component';
+import { NgAntdColorBlockComponent } from './ng-antd-color-block.component';
 
 @Component({
   selector: 'ng-antd-color-picker',
+  standalone: true,
+  imports: [NgIf, PickerComponent, SliderComponent, NgAntdColorBlockComponent, NgTemplateOutlet],
   template: `
     <div class="ant-color-picker-panel" [class.ant-color-picker-panel-disabled]="disabled">
       <ng-container *ngIf="panelRenderHeader">

@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NgAntdColorPickerComponent } from './ng-antd-color-picker.component';
-import { NgAntdColorPickerModule } from './ng-antd-color-picker.module';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { PickerComponent } from './components/picker.component';
@@ -15,8 +14,8 @@ describe('NgxColorPickerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NzxTestColorPickerComponent, PickerComponent],
-      imports: [NgAntdColorPickerModule]
+      declarations: [NzxTestColorPickerComponent],
+      imports: [NgAntdColorPickerComponent, PickerComponent]
     }).compileComponents();
   }));
 
@@ -49,7 +48,7 @@ describe('NgxColorPickerComponent', () => {
 
   it('color-picker basic', () => {
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgb(22, 119, 255)'
     );
   });
@@ -57,7 +56,7 @@ describe('NgxColorPickerComponent', () => {
   it('color-picker defaultValue', () => {
     component.defaultValue = '#ff6600';
     fixture.detectChanges();
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgb(255, 102, 0)'
     );
   });
@@ -84,7 +83,7 @@ describe('NgxColorPickerComponent', () => {
     const dom = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-palette');
     expect(dom.firstChild.style.top).toBe('-8px');
     expect(dom.firstChild.style.left).toBe('250px');
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgb(255, 102, 0)'
     );
   });
@@ -103,7 +102,7 @@ describe('NgxColorPickerComponent', () => {
     const dom = fixture.debugElement.nativeElement.querySelector('.ant-color-picker-palette');
     expect(dom.firstChild.style.top).toBe('-8px');
     expect(dom.firstChild.style.left).toBe('250px');
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgb(0, 106, 255)'
     );
     expect(component.changeColor?.toRgbString()).toBe('rgb(0, 106, 255)');
@@ -121,7 +120,7 @@ describe('NgxColorPickerComponent', () => {
     const closeEvent = new MouseEvent('mouseup');
     element.dispatchEvent(event);
     element.dispatchEvent(closeEvent);
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgb(255, 22, 22)'
     );
     expect(component.changeColor?.toRgbString()).toBe('rgb(255, 22, 22)');
@@ -139,7 +138,7 @@ describe('NgxColorPickerComponent', () => {
     const closeEvent = new MouseEvent('mouseup');
     element.dispatchEvent(event);
     element.dispatchEvent(closeEvent);
-    expect(resultEl.nativeElement.querySelector('.ant-color-picker-block-inner').style.backgroundColor).toBe(
+    expect(resultEl.nativeElement.querySelector('.ant-color-picker-color-block-inner').style.backgroundColor).toBe(
       'rgba(22, 119, 255, 0)'
     );
     expect(component.changeColor?.toRgbString()).toBe('rgba(22, 119, 255, 0)');

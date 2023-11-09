@@ -4,7 +4,7 @@
 
 The angular version of the color-picker component based on antd styles.
 
-Angular version >= 16
+Angular version >= 17 [![npm package](https://img.shields.io/badge/npm-latest%20version-%231890ff)](https://www.npmjs.com/package/ng-antd-color-picker)
 
 ## Installation
 
@@ -15,7 +15,7 @@ npm install ng-antd-color-picker
 ## Usage
 
 ```javascript
-import { NgAntdColorPickerModule } from 'ng-antd-color-picker';
+import { NgAntdColorPickerComponent } from 'ng-antd-color-picker';
 
 <ng-antd-color-picker></ng-antd-color-picker>
 
