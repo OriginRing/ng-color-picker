@@ -15,7 +15,10 @@ npm install ng-antd-color-picker
 ## Usage
 
 ```javascript
-import { NgAntdColorPickerComponent } from 'ng-antd-color-picker';
+standalone:
+import { NgAntdColorPickerComponent, NgAntdColorBlockComponent } from 'ng-antd-color-picker';
+module:
+import { NgAntdColorPickerModule } from 'ng-antd-color-picker';
 
 <ng-antd-color-picker></ng-antd-color-picker>
 
