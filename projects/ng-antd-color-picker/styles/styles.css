@@ -55,13 +55,16 @@
 }
 .ant-color-picker-slider {
   width: 100%;
-  margin-bottom: 12px;
+  border-radius: 4px;
 }
 .ant-color-picker-slider .ant-color-picker-palette {
   height: 8px;
 }
 .ant-color-picker-slider .ant-color-picker-gradient {
   border-radius: 4px;
+}
+.ant-color-picker-slider-hue {
+  margin-bottom: 12px;
 }
 .ant-color-picker-slider-alpha {
   background-image: conic-gradient(rgba(0, 0, 0, 0.06) 0 25%, transparent 0 50%, rgba(0, 0, 0, 0.06) 0 75%, transparent 0);
@@ -71,7 +74,6 @@
   position: relative;
   width: 28px;
   height: 28px;
-  margin-left: 8px;
   overflow: hidden;
   background-image: conic-gradient(rgba(0, 0, 0, 0.06) 0 25%, transparent 0 50%, rgba(0, 0, 0, 0.06) 0 75%, transparent 0);
   background-size: 50% 50%;
@@ -86,6 +88,8 @@
 }
 .ant-color-picker-slider-container {
   display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 .ant-color-picker-slider-container .ant-color-picker-slider-group {
   flex: 1;

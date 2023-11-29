@@ -67,12 +67,15 @@
 
   &-slider {
     width: 100%;
-    margin-bottom: @vertical-space;
+    border-radius: @inner-border-radius;
     .@{ColorPickerPrefixCls}-palette {
       height: 8px;
     }
     .@{ColorPickerPrefixCls}-gradient {
       border-radius: @inner-border-radius;
+    }
+    &-hue {
+      margin-bottom: @vertical-space;
     }
     &-alpha {
       background-image: conic-gradient(rgba(0, 0, 0, 0.06) 0 25%, transparent 0 50%, rgba(0, 0, 0, 0.06) 0 75%, transparent 0);
@@ -84,7 +87,6 @@
     position: relative;
     width: 28px;
     height: 28px;
-    margin-left: 8px;
     overflow: hidden;
     background-image: conic-gradient(rgba(0, 0, 0, 0.06) 0 25%, transparent 0 50%, rgba(0, 0, 0, 0.06) 0 75%, transparent 0);
     background-size: 50% 50%;
@@ -99,6 +101,8 @@
   }
   &-slider-container {
     display: flex;
+    gap: @vertical-space;
+    margin-bottom: @vertical-space;
     .@{ColorPickerPrefixCls}-slider-group {
       flex: 1;
       &-disabled-alpha {
