@@ -1,4 +1,5 @@
 # NgAntdColorPicker
+> Note: This component has already been integrated into [ng-zorro-antd](https://ng.ant.design/components/color-picker/en)
 
 ## Introduction
 
